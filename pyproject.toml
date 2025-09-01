@@ -1,0 +1,19 @@
+[project]
+name = "rag"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "chromadb>=1.0.20",
+    "docx2txt>=0.9",
+    "fastapi>=0.116.1",
+    "langchain>=0.3.27",
+    "langchain-community>=0.3.29",
+    "langchain-openai>=0.3.32",
+    "pypdf>=6.0.0",
+    "python-dotenv>=1.1.1",
+    "python-multipart>=0.0.20",
+    "sentence-transformers>=5.1.0",
+    "uvicorn>=0.35.0",
+]
