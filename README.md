@@ -22,7 +22,7 @@ A simple but powerful Retrieval-Augmented Generation (RAG) system built with Fas
 1. Clone the repository
 ```bash
 git clone <repository-url>
-cd RAG
+cd FastAPI-RAG-Chroma
 ```
 
 2. Install dependencies
