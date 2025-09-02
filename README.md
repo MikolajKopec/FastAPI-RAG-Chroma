@@ -29,7 +29,7 @@ cd FastAPI-RAG-Chroma
 ```bash
 pip install .
 # or with uv
-uv pip install .
+uv sync
 ```
 
 3. Start the server
