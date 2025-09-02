@@ -16,11 +16,26 @@ class VectorStore:
         )
 
     def get_all(self, limit: int = 1000, offset: int = 0, include=None):
+        if not include:
+            include = ["metadatas", "documents"]
         return self.vs._collection.get(
             limit=limit,
             offset=offset,
-            include=["metadatas", "documents"],
+            include=include,
         )
+
+    def add_texts(self, texts, metadatas, ids) -> int:
+        added = 0
+        try:
+            self.vs.add_texts(texts, metadatas=metadatas, ids=ids)
+            added = len(texts)
+        except Exception as e:
+            print(e)
+        self.vs.persist()
+        return added
+
+    def get_retriever(self, k: int = 4):
+        return self.vs.as_retriever(search_kwargs={"k": k})
 
 
 vector_store = VectorStore()

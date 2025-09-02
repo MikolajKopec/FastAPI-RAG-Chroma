@@ -1,6 +1,6 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 
-from services.rag import answer_with_sources
+from services.rag import RAGHandler, get_rag_handler
 
 
 chat = APIRouter(
@@ -11,5 +11,7 @@ chat = APIRouter(
 
 
 @chat.post("/{question}")
-def ask_question(question: str) -> dict:
-    return answer_with_sources(question)
+def ask_question(
+    question: str, rag_handler: RAGHandler = Depends(get_rag_handler)
+) -> dict:
+    return rag_handler.answer_with_sources(question)
