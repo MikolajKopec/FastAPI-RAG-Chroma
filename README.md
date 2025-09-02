@@ -34,7 +34,7 @@ uv sync
 
 3. Start the server
 ```bash
-uv uvicorn main:app --reload
+uv run uvicorn main:app --reload
 ```
 
 The API will be available at `http://localhost:8000`
